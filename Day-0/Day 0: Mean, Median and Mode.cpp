@@ -16,12 +16,11 @@ int main()
 
   for (int i = 0; i < size; i++)
   {
-    //cin >> temp;
-    //a.push_back(temp);
     cin>>a[i];
     mean += a[i];
   }
   mean = mean / size;
+  
   sort(a.begin(), a.end());
 
   if (size % 2 == 0)
@@ -40,7 +39,7 @@ int main()
   for(int i=0;i<size;i++){
     freq[a[i]]++;
   }
-  //mode = *max_element(freq.begin(), freq.end());
+  
   mode = 0;
   temp = freq[0];
   for (int i=1; i<max; i++){
@@ -50,9 +49,6 @@ int main()
     }
   }
 
-  /*cout<<"\n"<<"mean : "<<mean;
-  cout<<"\n"<<"Meadian : ";printf("%.1f", median);
-  cout<<"\nMode : "<<mode;*/
   cout<<mean<<"\n";
   printf("%.1f\n", median);
   cout<<mode<<"\n";
