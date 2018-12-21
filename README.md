@@ -1,2 +1,3 @@
-# 10-Days-of-Statistics
-All the code for #10-days-of-statistics
+# HackerRank 10 Days of Statistics Challenge
+
+Solution for Hackeranks 10 days of statistics challenge solved using mostly C++ :wink:
