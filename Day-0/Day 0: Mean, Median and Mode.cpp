@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-  int size, temp;
+  int size, temp, mode;
   float mean = 0, median;
   cin >> size;
   vector<int> a(size);
@@ -28,16 +28,34 @@ int main()
   {
     int num1 = (size / 2) - 1;
     int num2 = num1 + 1;
-    cout<<num1<<" "<<num2;
     median = (a[num1] + a[num2]) / 2.0 ;
   }
   else
   {
     median = a[size % 2];
   }
-  
-  cout<<"\n"<<"mean : "<<mean;
+
+  int max = *max_element(a.begin(), a.end());
+  vector<int>freq(max+1, 0);
+  for(int i=0;i<size;i++){
+    freq[a[i]]++;
+  }
+  //mode = *max_element(freq.begin(), freq.end());
+  mode = 0;
+  temp = freq[0];
+  for (int i=1; i<max; i++){
+    if(freq[i] > temp){
+        temp = freq[i];
+        mode = i;
+    }
+  }
+
+  /*cout<<"\n"<<"mean : "<<mean;
   cout<<"\n"<<"Meadian : ";printf("%.1f", median);
+  cout<<"\nMode : "<<mode;*/
+  cout<<mean<<"\n";
+  printf("%.1f\n", median);
+  cout<<mode<<"\n";
   
   return 0;
 }
